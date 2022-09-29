@@ -1,4 +1,4 @@
-# Integration with InfinitSpan
+# Integration with Infinispan 
 
 ## How do I run?
 
