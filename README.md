@@ -10,7 +10,7 @@
 
 ```run jboss```
 
-3 Run InfinitSpan Server
+3 Run Infinispan  Server
 
 ```docker run -it -p 11222:11222 -p 80:80 -e USER="admin" -e PASS="password" quay.io/infinispan/server:13.0```
 
