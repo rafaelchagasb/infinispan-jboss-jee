@@ -1,4 +1,4 @@
-package br.com.rafaelchagasb.infinitspan.ejb;
+package br.com.rafaelchagasb.infinispan.ejb;
 
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
@@ -10,7 +10,7 @@ import javax.inject.Inject;
 import org.infinispan.client.hotrod.RemoteCache;
 import org.infinispan.client.hotrod.RemoteCacheManager;
 
-import br.com.rafaelchagasb.infinitspan.cliente.InfinitspanClient;
+import br.com.rafaelchagasb.infinispan.client.InfinispanClient;
 
 @Stateless
 public class CacheService{
@@ -20,7 +20,7 @@ public class CacheService{
 	private RemoteCache<Object, Object> cache;
     
     @Inject
-    private InfinitspanClient client;
+    private InfinispanClient client;
     
     @PostConstruct
     public void init() {

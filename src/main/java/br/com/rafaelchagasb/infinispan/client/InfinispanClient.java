@@ -1,13 +1,14 @@
-package br.com.rafaelchagasb.infinitspan.cliente;
+package br.com.rafaelchagasb.infinispan.client;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.ejb.Stateless;
 
 import org.infinispan.client.hotrod.RemoteCacheManager;
+import org.infinispan.client.hotrod.configuration.ClientIntelligence;
 
 @Stateless
-public class InfinitspanClient {
+public class InfinispanClient {
 	
 	private RemoteCacheManager rmc;
 	
@@ -22,9 +23,11 @@ public class InfinitspanClient {
 	@PostConstruct
 	public void init() {
 		org.infinispan.client.hotrod.configuration.ConfigurationBuilder cb = new org.infinispan.client.hotrod.configuration.ConfigurationBuilder();
-		cb.marshaller(new org.infinispan.commons.marshall.ProtoStreamMarshaller())
-				.statistics()
-				.enable().addServer()
+		cb
+//				.marshaller(new org.infinispan.commons.marshall.ProtoStreamMarshaller())
+//				.statistics()
+//				.enable()
+				.addServer()
 				.host(HOST)
 				.port(PORT)
 				.connectionTimeout(5000)
@@ -32,7 +35,8 @@ public class InfinitspanClient {
 				.security()
 				.authentication()
 				.username(USER)
-				.password(PASSWORD);
+				.password(PASSWORD)
+				.clientIntelligence(ClientIntelligence.BASIC);
 		this.rmc = new RemoteCacheManager(cb.build());
 	}
 	

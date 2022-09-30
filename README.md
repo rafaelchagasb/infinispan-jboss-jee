@@ -19,4 +19,4 @@
 
 ## How do I test?
 
-```curl --location --request GET 'http://localhost:8080/cache-infinitspan-jboss/api/clients/Robert'```
+```curl --location --request GET 'http://localhost:8080/cache-infinispan-jboss/api/clients/Robert'```

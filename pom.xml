@@ -2,11 +2,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>br.com.rafaelchagasb</groupId>
-	<artifactId>cache-infinitspan-jboss</artifactId>
+	<artifactId>cache-infinispan-jboss</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>cache-infinitspan-jboss</name>
+	<name>cache-infinispan-jboss</name>
 	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

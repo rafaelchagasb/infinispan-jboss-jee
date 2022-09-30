@@ -1,4 +1,4 @@
-package br.com.rafaelchagasb.infinitspan.config;
+package br.com.rafaelchagasb.infinispan.config;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;

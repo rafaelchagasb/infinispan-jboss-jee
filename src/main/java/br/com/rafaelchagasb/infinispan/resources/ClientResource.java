@@ -1,4 +1,4 @@
-package br.com.rafaelchagasb.infinitspan.resources;
+package br.com.rafaelchagasb.infinispan.resources;
 
 import java.util.Optional;
 
@@ -7,7 +7,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 
-import br.com.rafaelchagasb.infinitspan.ejb.CacheService;
+import br.com.rafaelchagasb.infinispan.ejb.CacheService;
 
 @Path("clients")
 public class ClientResource {
@@ -18,12 +18,17 @@ public class ClientResource {
 	
 	@Path("{name}")
 	@GET
-	public void cacheEjb(@PathParam("name") String name) {
+	public String cacheEjb(@PathParam("name") String name) {
 		
 		 Optional<String> item = cacheEjb.get(name);
 		 
+		 if(item.isPresent()) {
+			 return item.get();
+		 }
+		 
 		 if(!item.isPresent()) {
 			 cacheEjb.set(name, name, 60l);
-		 }
+		 } 
+		 return null;
 	}
 }
