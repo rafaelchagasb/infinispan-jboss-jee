@@ -15,7 +15,7 @@ import br.com.rafaelchagasb.infinispan.client.InfinispanClient;
 @Stateless
 public class CacheService{
 	
-	private static final String KEY_CACHE = "clients";
+	private static final String KEY_CACHE = "my-cache";
 
 	private RemoteCache<Object, Object> cache;
     
